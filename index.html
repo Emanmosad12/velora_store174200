@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VÉLORA | Luxury Redefined</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background-color: #050505; /* أسود مطلق */
+      color: #E5C07B; /* ذهبي شامبين */
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Tajawal', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* خلفية سينمائية ناعمة جداً */
+    .bg-image {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      opacity: 0.15; 
+      filter: sepia(1) hue-rotate(5deg) brightness(0.5);
+      z-index: 1;
+      animation: slowZoom 20s infinite alternate;
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.15); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      padding: 40px;
+    }
+
+    /* حركة الدخول */
+    .fade-up {
+      animation: fadeUp 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 8rem;
+      font-weight: 400;
+      letter-spacing: 20px;
+      margin-right: -20px;
+      color: transparent;
+      background: linear-gradient(to right, #8A6A30, #E5C07B, #FFF8D6, #E5C07B, #8A6A30);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      color: #A0A0A0;
+      letter-spacing: 5px;
+      margin-bottom: 60px;
+    }
+
+    .divider {
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #E5C07B, transparent);
+      margin: 0 auto 60px auto;
+    }
+
+    /* الزرار الماسي الفخم */
+    .btn-diamond {
+      display: inline-block;
+      text-decoration: none;
+      padding: 2px; /* عشان البوردر يبان */
+      background: linear-gradient(90deg, #8A6A30, #E5C07B, #FFF8D6, #E5C07B, #8A6A30);
+      background-size: 200% auto;
+      position: relative;
+      z-index: 1;
+      transition: 0.5s;
+      animation: borderShine 3s linear infinite;
+    }
+
+    .btn-diamond span {
+      display: block;
+      padding: 18px 60px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #050505;
+      background: #E5C07B; /* لون الزرار الداخلي */
+      transition: 0.5s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-diamond:hover span {
+      background: transparent;
+      color: #E5C07B;
+    }
+
+    @keyframes borderShine {
+      to { background-position: 200% center; }
+    }
+
+    /* تأثير وهج حولين الزرار */
+    .btn-diamond::after {
+      content: '';
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      background: inherit;
+      filter: blur(15px);
+      opacity: 0;
+      z-index: -1;
+      transition: 0.5s;
+    }
+
+    .btn-diamond:hover::after {
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .brand-name { font-size: 4rem; letter-spacing: 10px; }
+      .tagline { font-size: 1.2rem; }
+      .btn-diamond span { padding: 15px 40px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-image"></div>
+
+  <div class="content">
+    <h1 class="brand-name fade-up">VÉLORA</h1>
+    <div class="tagline fade-up delay-1">The Essence of Elegance</div>
+    <div class="divider fade-up delay-1"></div>
+    
+    <div class="fade-up delay-2">
+      <p style="color: #ccc; margin-bottom: 50px; font-size: 1.2rem; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        حيث تلتقي الحرفية العالية بالتصميم الأنيق. اكتشفي قطعاً فنية لا تُنسى، صُممت لتبقى معكِ للأبد.
+      </p>
+      <!-- الزرار الجديد -->
+      <a href="shop.html" class="btn-diamond">
+        <span>اكتشفي المجموعة</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
